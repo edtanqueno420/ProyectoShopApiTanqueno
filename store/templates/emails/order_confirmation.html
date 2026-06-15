@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    .container { background: #fff; max-width: 600px; margin: 0 auto; padding: 30px; border-radius: 8px; }
+    h1 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #eee; }
+    th { background: #f8f8f8; }
+    .total-row td { font-weight: bold; font-size: 16px; }
+    .footer { margin-top: 30px; font-size: 12px; color: #999; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Confirmacion de pedido #{{ order_id }}</h1>
+    <p>Hola <strong>{{ username }}</strong>, hemos recibido tu pedido correctamente.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th><th>Cantidad</th><th>Precio unit.</th><th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr>
+          <td>{{ item.product_name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ item.unit_price }}</td>
+          <td>${{ item.subtotal }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td colspan="3">Total</td>
+          <td>${{ total }}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p>Estado: <strong>{{ status }}</strong></p>
+    <div class="footer">
+      <p>Pedido creado el {{ created_at }}. Este es un correo automatico.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+!Bienvenido a ShopAPI, {{ username }}!
+
+Tu cuenta ha sido creada exitosamente con el correo {{ email }}.
+
+Ya puedes explorar nuestros productos y realizar pedidos.
+
+---
+Este es un correo automatico, por favor no respondas.

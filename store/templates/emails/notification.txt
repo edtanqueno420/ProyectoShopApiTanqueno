@@ -1,0 +1,8 @@
+Hola {{ username }},
+
+{{ subject }}
+
+{{ message }}
+
+---
+Este mensaje fue enviado por el equipo de ShopAPI.

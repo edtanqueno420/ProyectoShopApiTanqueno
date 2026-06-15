@@ -1,0 +1,13 @@
+Confirmacion de pedido #{{ order_id }}
+
+Hola {{ username }}, hemos recibido tu pedido correctamente.
+
+Productos:
+{% for item in items %}- {{ item.product_name }}: {{ item.quantity }} x ${{ item.unit_price }} = ${{ item.subtotal }}
+{% endfor %}
+Total: ${{ total }}
+Estado: {{ status }}
+
+Pedido creado el {{ created_at }}.
+---
+Este es un correo automatico.
